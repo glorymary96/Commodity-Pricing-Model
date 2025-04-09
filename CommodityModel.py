@@ -39,25 +39,19 @@ class CommodityModel:
             raise KeyError("Required columns 'Date' and 'Close' not found in data")
 
         # Feature engineering: Convert Date to numeric days since the first date
-        # self.dataset["Date"] = pd.to_datetime(self.dataset["Date"])
-        # self.dataset["Days"] = (self.dataset["Date"] - self.dataset["Date"].min()).dt.days
-        # self.dataset.sort_values("Date", inplace=True)
-        # self.dataset["R_10D"] = self.dataset["Close"].rolling(window=10).mean()
-        # self.dataset["R_30D"] = self.dataset["Close"].rolling(window=30).mean()
-
         df = self.dataset.copy()[['Date', 'Close']].rename(columns={'Close': 'Price'})
 
         df.index = pd.to_datetime(df['Date'])
         df = df.asfreq('D').ffill()
         df["Days"] = (df["Date"] - df["Date"].min()).dt.days
+        df.sort_values("Date", inplace=True)
+        # Basic transformations
+        df['Returns'] = df['Price'].pct_change()
+        df['Log_Price'] = np.log(df['Price'])
 
-        # # Basic transformations
-        #df['Returns'] = df['Price'].pct_change()
-        #df['Log_Price'] = np.log(df['Price'])
-
-        # # Volatility measures
-        #df['Volatility_7'] = df['Returns'].shift(1).rolling(7).std()
-        # df['Volatility_21'] = df['Returns'].shift(1).rolling(21).std()
+        # Volatility measures
+        df['Volatility_7'] = df['Returns'].shift(1).rolling(7).std()
+        df['Volatility_21'] = df['Returns'].shift(1).rolling(21).std()
 
         # Moving averages - calculate separately
         windows = [3, 7, 14, 21, 50]
@@ -72,14 +66,14 @@ class CommodityModel:
         df['Momentum_7'] = df['Price'].shift(1).pct_change(7)
         df['Momentum_14'] = df['Price'].shift(1).pct_change(14)
 
-        # # Date features
-        # df['DayOfWeek'] = df.index.dayofweek
-        # df['Month'] = df.index.month
-        #
-        # # Remove outliers
-        # q1 = df['Price'].quantile(0.05)
-        # q3 = df['Price'].quantile(0.95)
-        # df = df[(df['Price'] > q1) & (df['Price'] < q3)]
+        # Date features
+        df['DayOfWeek'] = df.index.dayofweek
+        df['Month'] = df.index.month
+
+        # Remove outliers
+        q1 = df['Price'].quantile(0.05)
+        q3 = df['Price'].quantile(0.95)
+        df = df[(df['Price'] > q1) & (df['Price'] < q3)]
 
         df.dropna(inplace=True)
         df = df[df.columns].reset_index(drop=True)
