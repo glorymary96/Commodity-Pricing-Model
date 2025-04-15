@@ -46,7 +46,6 @@ def evaluate_model(y_true, y_pred):
         'MSE': mean_squared_error(y_true, y_pred)
     }
 
-
 # Train-test split and model evaluation
 results = {}
 forecast_steps = 12
@@ -64,11 +63,12 @@ for col in df_monthly.columns[1:]:
         # Exponential Smoothing
         es_model = ExponentialSmoothing(
             train[col],
-            #trend='add',
+            trend='add',
             seasonal='add',
             seasonal_periods=12
         ).fit()
-        es_pred = es_model.forecast(12)
+        es_pred = es_model.forecast(steps = forecast_steps)
+        results[col] = evaluate_model(test, es_pred)
         es_metrics = evaluate_model(test[col], es_pred)
 
         # SARIMA
@@ -77,7 +77,7 @@ for col in df_monthly.columns[1:]:
             order=(1, 1, 1),
             seasonal_order=(1, 1, 1, 12)
         ).fit(disp=False)
-        sarima_pred = sarima_model.forecast(steps=12)
+        sarima_pred = sarima_model.forecast(steps=forecast_steps)
         sarima_metrics = evaluate_model(test[col], sarima_pred)
 
         # Store results
