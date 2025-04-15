@@ -17,11 +17,11 @@ FILES_DIR = '/home/glory/Documents/Python/Projects/PricingModel/Data/'
 # Define commodities and their Yahoo Finance tickers
 commodities = {
     "WTI_Crude_Oil": "CL=F",
-    # "Brent_Crude_Oil": "BZ=F",
-    # "Henry_Hub_Natural_Gas": "NG=F",
-    #"Gold": "GC=F",
-    # "Silver": "SI=F",
-    #"Wheat": "ZW=F"
+    "Brent_Crude_Oil": "BZ=F",
+    "Henry_Hub_Natural_Gas": "NG=F",
+    "Gold": "GC=F",
+    "Silver": "SI=F",
+    "Wheat": "ZW=F"
 }
 
 # models = [
