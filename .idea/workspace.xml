@@ -5,15 +5,16 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="1848e442-b133-4926-bdf4-a4ce0bfaea1e" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/.gitignore" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/PricingModel.iml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/Project_Default.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/inspectionProfiles/profiles_settings.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/modules.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/vcs.xml" beforeDir="false" />
-      <change beforePath="$PROJECT_DIR$/trial.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatsModel.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/trial1.py" beforeDir="false" afterPath="$PROJECT_DIR$/StatsModel_Monthly.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Brent_Crude_Oil.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Brent_Crude_Oil.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommodityData.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommodityData.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/CommodityModel.py" beforeDir="false" afterPath="$PROJECT_DIR$/CommodityModel.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gold.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Gold.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Henry_Hub_Natural_Gas.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Henry_Hub_Natural_Gas.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/PARAMS.py" beforeDir="false" afterPath="$PROJECT_DIR$/PARAMS.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Silver.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Silver.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/WTI_Crude_Oil.csv" beforeDir="false" afterPath="$PROJECT_DIR$/WTI_Crude_Oil.csv" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Wheat.csv" beforeDir="false" afterPath="$PROJECT_DIR$/Wheat.csv" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -23,22 +24,22 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="GitHubPullRequestSearchHistory"><![CDATA[{
-  "lastFilter": {
-    "state": "OPEN",
-    "assignee": "glorymary96"
+  <component name="GitHubPullRequestSearchHistory">{
+  &quot;lastFilter&quot;: {
+    &quot;state&quot;: &quot;OPEN&quot;,
+    &quot;assignee&quot;: &quot;glorymary96&quot;
   }
-}]]></component>
-  <component name="GithubPullRequestsUISettings"><![CDATA[{
-  "selectedUrlAndAccountId": {
-    "url": "https://github.com/glorymary96/Pricing-Model.git",
-    "accountId": "599b7965-d0ef-45c5-aa90-db7cf37a876c"
+}</component>
+  <component name="GithubPullRequestsUISettings">{
+  &quot;selectedUrlAndAccountId&quot;: {
+    &quot;url&quot;: &quot;https://github.com/glorymary96/Pricing-Model.git&quot;,
+    &quot;accountId&quot;: &quot;599b7965-d0ef-45c5-aa90-db7cf37a876c&quot;
   }
-}]]></component>
-  <component name="ProjectColorInfo"><![CDATA[{
-  "customColor": "",
-  "associatedIndex": 6
-}]]></component>
+}</component>
+  <component name="ProjectColorInfo">{
+  &quot;customColor&quot;: &quot;&quot;,
+  &quot;associatedIndex&quot;: 6
+}</component>
   <component name="ProjectId" id="2vm0nxdftSIrsWOt5S4wUYwfkkX" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
@@ -46,11 +47,15 @@
   </component>
   <component name="PropertiesComponent"><![CDATA[{
   "keyToString": {
+    "Python.CommodityData.executor": "Run",
+    "Python.PARAMS.executor": "Run",
     "Python.StatsModel.executor": "Run",
+    "Python.main.executor": "Run",
     "Python.trial1.executor": "Run",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "RunOnceActivity.git.unshallow": "true",
     "git-widget-placeholder": "main",
+    "last_opened_file_path": "/home/glory/Documents/Python/Projects/Weather-Interpolation",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -62,8 +67,8 @@
   <component name="SharedIndexes">
     <attachedChunks>
       <set>
-        <option value="bundled-js-predefined-d6986cc7102b-1632447f56bf-JavaScript-PY-243.26053.29" />
-        <option value="bundled-python-sdk-b1dbf8ef85a6-4df51de95216-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-243.26053.29" />
+        <option value="bundled-js-predefined-d6986cc7102b-b26f3e71634d-JavaScript-PY-251.26094.141" />
+        <option value="bundled-python-sdk-9f8e2b94138c-36ea0e71a18c-com.jetbrains.pycharm.pro.sharedIndexes.bundled-PY-251.26094.141" />
       </set>
     </attachedChunks>
   </component>
@@ -75,15 +80,30 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1744735115227</updated>
-      <workItem from="1744735116688" duration="820000" />
+      <workItem from="1744735116688" duration="5262000" />
+      <workItem from="1747031317508" duration="2145000" />
+      <workItem from="1750763073781" duration="3066000" />
     </task>
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="version" value="3" />
   </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" suspend="THREAD" type="python-line">
+          <url>file://$PROJECT_DIR$/main.py</url>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
+  </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
+    <SUITE FILE_PATH="coverage/PricingModel$main.coverage" NAME="main Coverage Results" MODIFIED="1744741989705" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PricingModel$trial1.coverage" NAME="trial1 Coverage Results" MODIFIED="1744735390486" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PricingModel$PARAMS.coverage" NAME="PARAMS Coverage Results" MODIFIED="1744741916223" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/PricingModel$StatsModel.coverage" NAME="StatsModel Coverage Results" MODIFIED="1744735228317" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
+    <SUITE FILE_PATH="coverage/PricingModel$CommodityData.coverage" NAME="CommodityData Coverage Results" MODIFIED="1744741578936" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="false" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
   </component>
 </project>

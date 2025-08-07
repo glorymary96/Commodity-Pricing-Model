@@ -29,7 +29,7 @@ commodities = {
 #     ('Random Forest', RandomForestRegressor(random_state=42)),
 #     ('Gradient Boost', GradientBoostingRegressor(n_estimators=100, learning_rate=0.01, max_depth=3, random_state=42)),
 #     ('XGBoost', XGBRegressor(n_estimators=100, learning_rate=0.1, random_state=42)),
-#     ('KNN', KNeighborsRegressor(n_neighbors=5)),
+#     #('KNN', KNeighborsRegressor(n_neighbors=5)),
 #     ('Decision Tree', DecisionTreeRegressor(random_state=42)),
 #     ('Bagging Regressor', BaggingRegressor(n_estimators=150, random_state=42))
 # ]

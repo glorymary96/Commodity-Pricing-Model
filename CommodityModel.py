@@ -40,11 +40,12 @@ class CommodityModel:
 
         # Feature engineering: Convert Date to numeric days since the first date
         df = self.dataset.copy()[['Date', 'Close']].rename(columns={'Close': 'Price'})
-
-        df.index = pd.to_datetime(df['Date'])
+        df['Date'] = pd.to_datetime(df['Date'])
+        df.sort_values("Date", inplace=True)
+        df.index = df['Date']
         df = df.asfreq('D').ffill()
         df["Days"] = (df["Date"] - df["Date"].min()).dt.days
-        df.sort_values("Date", inplace=True)
+
         # Basic transformations
         df['Returns'] = df['Price'].pct_change()
         df['Log_Price'] = np.log(df['Price'])

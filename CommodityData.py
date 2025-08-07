@@ -26,6 +26,7 @@ class CommodityData:
         self.end_date = end_date
 
         self.data = self.get_data()
+        print("Fetching data completed")
         #self._line_plot(self.data)
         #self.seasonal_dependence()
 
