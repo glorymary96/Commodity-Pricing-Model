@@ -1,4 +1,3 @@
-
 import pandas as pd
 import numpy as np
 from statsmodels.tsa.holtwinters import ExponentialSmoothing
@@ -6,7 +5,7 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 
 class ExponentialSmoothingModel:
-    def __init__(self, seasonal_periods=12, trend='add', seasonal='add'):
+    def __init__(self, seasonal_periods=12, trend="add", seasonal="add"):
         self.model = None
         self.seasonal_periods = seasonal_periods
         self.trend = trend
@@ -18,14 +17,14 @@ class ExponentialSmoothingModel:
         try:
             # For time series, we typically only need y (the target variable)
             # X may contain datetime information which we can use as the index
-            if isinstance(X, pd.DataFrame) and 'Date' in X.columns:
-                y.index = pd.to_datetime(X['Date'])
+            if isinstance(X, pd.DataFrame) and "Date" in X.columns:
+                y.index = pd.to_datetime(X["Date"])
 
             self.model = ExponentialSmoothing(
                 y,
                 trend=self.trend,
                 seasonal=self.seasonal,
-                seasonal_periods=self.seasonal_periods
+                seasonal_periods=self.seasonal_periods,
             ).fit()
             self.fitted_values = self.model.fittedvalues
             return self
@@ -44,9 +43,9 @@ class ExponentialSmoothingModel:
                 steps = X
             elif isinstance(X, pd.DataFrame):
                 # If X is a DataFrame with dates, calculate how many steps to predict
-                if 'Date' in X.columns:
+                if "Date" in X.columns:
                     last_date = pd.to_datetime(self.fitted_values.index[-1])
-                    future_dates = pd.to_datetime(X['Date'])
+                    future_dates = pd.to_datetime(X["Date"])
                     steps = len(future_dates[future_dates > last_date])
                 else:
                     steps = len(X)
@@ -71,13 +70,11 @@ class SARIMAModel:
         try:
             # For time series, we typically only need y (the target variable)
             # X may contain datetime information which we can use as the index
-            if isinstance(X, pd.DataFrame) and 'Date' in X.columns:
-                y.index = pd.to_datetime(X['Date'])
+            if isinstance(X, pd.DataFrame) and "Date" in X.columns:
+                y.index = pd.to_datetime(X["Date"])
 
             self.model = SARIMAX(
-                y,
-                order=self.order,
-                seasonal_order=self.seasonal_order
+                y, order=self.order, seasonal_order=self.seasonal_order
             ).fit(disp=False)
             self.fitted_values = self.model.fittedvalues
             return self
@@ -96,9 +93,9 @@ class SARIMAModel:
                 steps = X
             elif isinstance(X, pd.DataFrame):
                 # If X is a DataFrame with dates, calculate how many steps to predict
-                if 'Date' in X.columns:
+                if "Date" in X.columns:
                     last_date = pd.to_datetime(self.fitted_values.index[-1])
-                    future_dates = pd.to_datetime(X['Date'])
+                    future_dates = pd.to_datetime(X["Date"])
                     steps = len(future_dates[future_dates > last_date])
                 else:
                     steps = len(X)

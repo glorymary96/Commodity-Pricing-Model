@@ -5,19 +5,19 @@ from PARAMS import commodities, start_date, end_date, models, LOG
 from DailyCommodityForecaster import RobustDailyCommodityForecaster
 
 import matplotlib.pyplot as plt
-if __name__ == "__main__":
 
-    plt.close('all')
-    for commodity,ticker in commodities.items():
+if __name__ == "__main__":
+    plt.close("all")
+    for commodity, ticker in commodities.items():
         LOG(commodity)
-        experiment =  CommodityModel(
-            dataset = CommodityData(
-                commodity = commodity,
+        experiment = CommodityModel(
+            dataset=CommodityData(
+                commodity=commodity,
                 commodity_mapping=commodities,
-                start_date = start_date,
-                end_date = end_date
+                start_date=start_date,
+                end_date=end_date,
             ),
-            models = models
+            models=models,
         )
 
         # experiment = RobustDailyCommodityForecaster(

@@ -1,7 +1,11 @@
 import datetime as dt
 
 from sklearn.linear_model import LinearRegression
-from sklearn.ensemble import RandomForestRegressor, GradientBoostingRegressor, BaggingRegressor
+from sklearn.ensemble import (
+    RandomForestRegressor,
+    GradientBoostingRegressor,
+    BaggingRegressor,
+)
 from sklearn.tree import DecisionTreeRegressor
 from sklearn.neighbors import KNeighborsRegressor
 from xgboost import XGBRegressor
@@ -12,7 +16,7 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 from Models import *
 
-DATA_DIR = './Data/'
+DATA_DIR = "./Data/"
 
 # Define commodities and their Yahoo Finance tickers
 commodities = {
@@ -21,7 +25,7 @@ commodities = {
     "Henry_Hub_Natural_Gas": "NG=F",
     "Gold": "GC=F",
     "Silver": "SI=F",
-    "Wheat": "ZW=F"
+    "Wheat": "ZW=F",
 }
 
 # models = [
@@ -35,21 +39,19 @@ commodities = {
 # ]
 
 models = [
-     # ("Exponential Smoothing", ExponentialSmoothingModel()),
-     # ("SARIMA", SARIMAModel(order=(1,1,1), seasonal_order=(1,1,1,12))),
-    ('Random Forest', RandomForestRegressor(n_estimators=100, random_state=42)),
-    ('XGBoost', XGBRegressor(n_estimators=100, learning_rate=0.1, random_state=42)),
-    ('LightGBM', lightgbm.LGBMRegressor())
-
+    # ("Exponential Smoothing", ExponentialSmoothingModel()),
+    # ("SARIMA", SARIMAModel(order=(1,1,1), seasonal_order=(1,1,1,12))),
+    ("Random Forest", RandomForestRegressor(n_estimators=100, random_state=42)),
+    ("XGBoost", XGBRegressor(n_estimators=100, learning_rate=0.1, random_state=42)),
+    ("LightGBM", lightgbm.LGBMRegressor()),
 ]
 # Define time range
 start_date = "2020-01-01"  # Adjust based on data availability
-end_date = dt.datetime.today().strftime('%Y-%m-%d')
+end_date = dt.datetime.today().strftime("%Y-%m-%d")
+
 
 def LOG(log_msg):
     if not isinstance(log_msg, str):
         raise ValueError("Log message must be a string")
     else:
-        print(dt.datetime.now().strftime('%H:%M:%S')+ ' - '+ log_msg)
-
-
+        print(dt.datetime.now().strftime("%H:%M:%S") + " - " + log_msg)
