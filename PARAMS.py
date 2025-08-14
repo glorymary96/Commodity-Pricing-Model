@@ -12,7 +12,7 @@ from statsmodels.tsa.statespace.sarimax import SARIMAX
 
 from Models import *
 
-FILES_DIR = '/home/glory/Documents/Python/Projects/PricingModel/Data/'
+DATA_DIR = './Data/'
 
 # Define commodities and their Yahoo Finance tickers
 commodities = {
@@ -42,8 +42,6 @@ models = [
     ('LightGBM', lightgbm.LGBMRegressor())
 
 ]
-
-
 # Define time range
 start_date = "2020-01-01"  # Adjust based on data availability
 end_date = dt.datetime.today().strftime('%Y-%m-%d')

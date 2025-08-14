@@ -9,7 +9,7 @@ import warnings
 warnings.filterwarnings('ignore')
 
 # Load and preprocess data
-file_path = "CMO-Historical-Data-Monthly.xlsx"
+file_path = "./Data/CMO-Historical-Data-Monthly.xlsx"
 df = pd.read_excel(file_path, sheet_name='Monthly Prices')
 
 # Data cleaning

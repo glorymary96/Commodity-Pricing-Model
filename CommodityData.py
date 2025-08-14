@@ -1,8 +1,9 @@
 import pandas as pd
 import matplotlib.pyplot as plt
 from statsmodels.tsa.seasonal import seasonal_decompose
+import os
 
-from PARAMS import commodities, start_date, end_date, LOG
+from PARAMS import LOG, DATA_DIR
 import yfinance as yf
 
 class CommodityData:
@@ -46,14 +47,12 @@ class CommodityData:
                 LOG(f"No data found for {self.commodity}")
                 return pd.DataFrame()
 
-            df.reset_index(inplace=True)
-            df["Commodity"] = self.commodity  # Add a column to distinguish commodities
-            df.to_csv(self.commodity + ".csv", index=False)
-
-            df = pd.read_csv(self.commodity + ".csv")
-            df = df.iloc[1:].reset_index(drop=True)
+            df.columns = df.columns.get_level_values(0)
+            df.columns.name = None
+            df = df.reset_index()
             df["Date"] = pd.to_datetime(df["Date"])
             df['Close'] = df["Close"].astype(float)
+
             return df
 
         except Exception as e:
