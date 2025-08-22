@@ -46,11 +46,10 @@ Open and edit PARAMS.py to set:
 python main.py
 ```
 This will:
-
-    - Load fetch historical price data from yahoo finance and create a csv file
-    - Train models per commodity and time frequency
-    - Generate evaluation metrics and visual output (Predicted, Actual)
-    -  Future price forecasts
+- Load fetch historical price data from yahoo finance and create a csv file
+- Train models per commodity and time frequency
+- Generate evaluation metrics and visual output (Predicted, Actual)
+-  Future price forecasts
 
 5. Explore & Evaluate
 
@@ -74,11 +73,10 @@ Visuals and metrics are displayed.
 7. Customization Options
 
 You can extend the framework by:
-
-    - Adding more commodities in PARAMS.py or uploading corresponding CSVs
-    - Adjust date ranges
-    - Customizing model types
-    - Add custom feature engineering
-    - Incorporating more evaluation metrics
-    - Adding support for multi-step forecasting or real-time updates
+- Adding more commodities in PARAMS.py or uploading corresponding CSVs
+- Adjust date ranges
+- Customizing model types
+- Add custom feature engineering
+- Incorporating more evaluation metrics
+- Adding support for multi-step forecasting or real-time updates
 
